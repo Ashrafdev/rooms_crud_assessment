@@ -1,0 +1,26 @@
+{
+  "name": "novatis",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app) [![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashrafdev/rooms_crud_assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashrafdev/rooms_crud_assessment/issues"
+  },
+  "homepage": "https://github.com/Ashrafdev/rooms_crud_assessment#readme",
+  "devDependencies": {
+    "laravel-mix": "^0.12.1"
+  }
+}
