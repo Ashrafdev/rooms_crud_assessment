@@ -28,7 +28,7 @@ class RoomsController extends AppController
 
         $Rooms = $this->Rooms->find();
 
-        if ($this->request->is(['post', 'put'])) {
+        if ($this->request->is(['post'])) {
             if (!empty($this->request->getdata('status_id'))) {
                 $Rooms->where(['Rooms.status_id =' => $this->request->getdata('status_id')]);
             }
