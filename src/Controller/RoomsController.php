@@ -25,18 +25,21 @@ class RoomsController extends AppController
             'contain' => ['Statuses']
         ];
 
+        $Rooms = $this->Rooms->find();
+
         if ($filter = $this->request->is(['post', 'put'])) {
-            $this->paginate = [
-                'conditions' => [
-                    'status_id' => $this->request->getdata('status_id'),
-                    'price_per_day' => $this->request->getdata('price_per_day')
-                ]
-            ];
+            if ($this->request->getdata('status_id') !== "") {
+                $Rooms->where(['status_id LIKE' => "%" . $this->request->getdata('status_id') . "%"]);
+            }
+            if ($this->request->getdata('price_per_day') !== "") {
+                $Rooms->where(['price_per_day LIKE' => "%" . $this->request->getdata('price_per_day') . "%"]);
+            }
         }
 
-        $rooms = $this->paginate($this->Rooms);
+        $rooms = $this->paginate($Rooms);
+        $_status = $this->Rooms->Statuses->find('list');
 
-        $this->set(compact('rooms'));
+        $this->set(compact('rooms', '_status'));
         $this->set('_serialize', ['rooms']);
     }
 

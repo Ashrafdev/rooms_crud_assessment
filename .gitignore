@@ -25,3 +25,7 @@
 /vendors/*
 .idea/inspectionProfiles/
 .idea/workspace.xml
+/vendor/
+/tmp/
+/node_modules/
+/logs/
