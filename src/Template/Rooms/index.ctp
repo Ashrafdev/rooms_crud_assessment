@@ -25,7 +25,7 @@
                     <?= $this->Form->select('status_id', $_status, ['empty' => 'all']) ?>
                 </div>
                 <div class="large-5 columns">
-                    <?= $this->Form->control('price_per_day') ?>
+                    <?= $this->Form->control('price_per_day', ['type' => 'text']) ?>
                 </div>
                 <div class="large-2 columns">
                     <?= $this->Form->button('submit') ?>

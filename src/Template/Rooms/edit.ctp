@@ -23,7 +23,7 @@
         <legend><?= __('Edit Room') ?></legend>
         <?php
             echo $this->Form->control('room_no');
-            echo $this->Form->control('price_per_day', ['label' => 'Price per day (RM)']);
+            echo $this->Form->control('price_per_day', ['label' => 'Price per day (RM)', 'type' => 'text']);
             echo $this->Form->control('status_id', ['options' => $statuses]);
         ?>
     </fieldset>
