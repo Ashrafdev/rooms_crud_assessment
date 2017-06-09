@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\Room;
 
 /**
  * Rooms Controller
@@ -27,12 +28,12 @@ class RoomsController extends AppController
 
         $Rooms = $this->Rooms->find();
 
-        if ($filter = $this->request->is(['post', 'put'])) {
-            if ($this->request->getdata('status_id') !== "") {
-                $Rooms->where(['status_id LIKE' => "%" . $this->request->getdata('status_id') . "%"]);
+        if ($this->request->is(['post', 'put'])) {
+            if (!empty($this->request->getdata('status_id'))) {
+                $Rooms->where(['Rooms.status_id =' => $this->request->getdata('status_id')]);
             }
-            if ($this->request->getdata('price_per_day') !== "") {
-                $Rooms->where(['price_per_day LIKE' => "%" . $this->request->getdata('price_per_day') . "%"]);
+            if ($price = $this->request->getdata('price_per_day')) {
+                $Rooms->where(['Rooms.price_per_day LIKE' => "%" . $price . "%"]);
             }
         }
 

@@ -60,8 +60,8 @@ class RoomsTable extends Table
             ->notEmpty('room_no');
 
         $validator
-            ->decimal('price_per_day')
-            ->allowEmpty('price_per_day');
+            ->requirePresence('price_per_day', 'create')
+            ->notEmpty('price_per_day');
 
         return $validator;
     }

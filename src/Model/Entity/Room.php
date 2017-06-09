@@ -8,7 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $room_no
- * @property float $price_per_day
+ * @property string $price_per_day
  * @property int $status_id
  *
  * @property \App\Model\Entity\Status $status

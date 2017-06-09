@@ -22,11 +22,11 @@
             <div class="row">
                 <div class="large-5 columns">
                     <label for="status_id">Status</label>
-                    <?= $this->Form->select('status_id', $_status, ['empty' => true]) ?>
+                    <?= $this->Form->select('status_id', $_status, ['empty' => 'all']) ?>
                 </div>
                 <div class="large-5 columns">
                     <label for="price_per_day">Price per day</label>
-                    <?= $this->Form->number('price_per_day', ['empty' => true]) ?>
+                    <?= $this->Form->number('price_per_day') ?>
                 </div>
                 <div class="large-2 columns">
                     <?= $this->Form->button('submit') ?>
