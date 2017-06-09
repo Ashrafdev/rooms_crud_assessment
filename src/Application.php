@@ -19,6 +19,7 @@ use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use App\Middleware\MinifyHtmlMiddleware;
 
 /**
  * Application setup class.
@@ -46,6 +47,10 @@ class Application extends BaseApplication
 
             // Apply routing
             ->add(RoutingMiddleware::class);
+
+        if(!Configure::read("debug")){
+            $middleware->add(MinifyHtmlMiddleware::class);
+        }
 
         return $middleware;
     }
