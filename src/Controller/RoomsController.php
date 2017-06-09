@@ -30,10 +30,10 @@ class RoomsController extends AppController
 
         if ($this->request->is(['post'])) {
             if (!empty($this->request->getdata('status_id'))) {
-                $Rooms->where(['Rooms.status_id =' => $this->request->getdata('status_id')]);
+                $Rooms->where(['status_id =' => $this->request->getdata('status_id')]);
             }
             if ($price = $this->request->getdata('price_per_day')) {
-                $Rooms->where(['Rooms.price_per_day LIKE' => "%" . $price . "%"]);
+                $Rooms->where(['price_per_day LIKE' => "%" . $price . "%"]);
             }
         }
 
