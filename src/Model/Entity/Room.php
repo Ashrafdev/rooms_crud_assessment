@@ -8,8 +8,9 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $room_no
- * @property string $price_per_day
+ * @property int $price_per_day
  * @property int $status_id
+ * @property \Cake\I18n\FrozenTime $created
  *
  * @property \App\Model\Entity\Status $status
  */

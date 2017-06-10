@@ -41,6 +41,7 @@
             <th scope="col"><?= $this->Paginator->sort('room_no') ?></th>
             <th scope="col"><?= $this->Paginator->sort('price_per_day') ?></th>
             <th scope="col"><?= $this->Paginator->sort('status_id') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('created') ?></th>
             <th scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
@@ -51,6 +52,7 @@
                 <td><?= $this->Number->format($room->room_no) ?></td>
                 <td><?= "RM " . $this->Number->format($room->price_per_day) ?></td>
                 <td><?= $room->has('status') ? $this->Html->link($room->status->name, ['controller' => 'Statuses', 'action' => 'view', $room->status->id]) : '' ?></td>
+                <td><?= $room->created ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $room->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $room->id]) ?>

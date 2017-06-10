@@ -18,6 +18,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Room patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Room[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Room findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class RoomsTable extends Table
 {
@@ -35,6 +37,8 @@ class RoomsTable extends Table
         $this->setTable('rooms');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->addBehavior('Timestamp');
 
         $this->belongsTo('Statuses', [
             'foreignKey' => 'status_id',
@@ -60,6 +64,7 @@ class RoomsTable extends Table
             ->notEmpty('room_no');
 
         $validator
+            ->integer('price_per_day')
             ->requirePresence('price_per_day', 'create')
             ->notEmpty('price_per_day');
 
